@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | General Form Elements</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+         .modal {
+            display: none;
+            /*/ Hidden by default / position: fixed;
+            / Stay in place / z-index: 1;
+            / Sit on top / padding-top: 100px;
+            / Location of the box / left: 0;*/
+            top: 0;
+            width: 100%;
+            /*/ Full width / height: 100%;
+            / Full height / overflow: auto;
+            / Enable scroll if needed / background-color: rgb(0,0,0);
+            / Fallback color / background-color: rgba(0,0,0,0.4);
+            / Black w/ opacity /;*/
+        }
+
+         .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 40%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+
+
+        /*// / The Close Button /*/
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color:lightpink;
+            color:black;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        /*.modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }*/
+        .popupalignment{
+            margin-left:1em;
+        }
+    </style>
+</head>
+<body class="">
+    <div class="wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <!--/.col (left) -->
+                    <!-- right column -->
+                    <div class="col-md-6">
+                        <!-- Horizontal Form -->
+                        <!-- /.box -->
+                        <!-- general form elements disabled -->
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h2 class="box-title">PATIENT HISTORY FORM</h2>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div role="form" id="form">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Patients Name</label>
+                                        <input type="text" id="Pname" class="form-control" placeholder="Enter ..." required>
+                                        <!-- <span class="error">This field is required</span>-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Todays Date</label>
+                                        <input type="date" id="Tdate" class="form-control" placeholder="Enter ..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date Of Birth</label>
+                                        <input type="date" id="dob" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Social Security Number</label>
+                                        <input type="text" id="ssn" class="form-control" placeholder="Enter Number...">
+                                    </div>
+                                    <h4><label>Past Medical History</label></h4>
+                                    <div class="form-group">
+                                        <label>Previous Physician's name</label>
+                                        <input type="text" id="ppn" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="radio" id="rb1">
+                                            <label>
+                                                Have you ever been hospitalized?
+                                            </label>
+                                            <label style="margin-right:20px">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="YES">
+                                                YES
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="NO">
+                                                NO
+                                            </label>
+                                        </div>
+                                        <div class="radio" id="rb2">
+                                            <label>
+                                                Have you ever been tested for hepatitis A,B or C?
+                                            </label>
+                                            <label style="margin-right:20px">
+                                                <input type="radio" name="optionsRadios1" id="optionsRadios3" value="YES">
+                                                YES
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="optionsRadios1" id="optionsRadios4" value="NO">
+                                                NO
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                    <h5>
+                                        <label>
+                                            Which of the following conditions are currently being treated or have been treated for in the past(please select)
+
+                                        </label>
+                                    </h5>
+
+                                    <!-- checkbox -->
+                                    <div class="form-group" id="ckb">
+                                        <div class="checkbox">
+                                            <label style="margin-right:35px;">
+                                                <input type="checkbox" name="hospital" value="Heart disease">
+                                                Heart disease
+                                            </label>
+                                            <label style="margin-right:55px;">
+                                                <input type="checkbox" name="hospital" value="Liver Problem">
+                                                Liver Problem
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="hospital" value="High cholesterol">
+                                                High cholesterol
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label style="margin-right:20px;">
+                                                <input type="checkbox" name="hospital" value="Kidney problem">
+                                                Kidney problem
+                                            </label>
+                                            <label style="margin-right:20px;">
+                                                <input type="checkbox" name="hospital" value="High blood pressure">
+                                                High blood pressure
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="hospital" value="Low blood pressure">
+                                                Low blood pressure
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label style="margin-right:53px;">
+                                                <input type="checkbox" name="hospital" value="Heartburn">
+                                                Heartburn
+                                            </label>
+                                            <label style="margin-right:34px;">
+                                                <input type="checkbox" name="hospital" value="Anemia problems">
+                                                Anemia problems
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="hospital" value="Swollen ankles">
+                                                Swollen ankles
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label style="margin-right:34px;">
+                                                <input type="checkbox" name="hospital" value="Ear problems">
+                                                Ear problems
+                                            </label>
+                                            <label style="margin-right:93px;">
+                                                <input type="checkbox" name="hospital" value="Asthma">
+                                                Asthma
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="hospital" value="Lung problems/cough">
+                                                Lung problems/cough
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label style="margin-right:26px;">
+                                                <input type="checkbox" name="hospital" value="Sinus problem">
+                                                Sinus problem
+                                            </label>
+                                            <label style="margin-right:18px;">
+                                                <input type="checkbox" name="hospital" value="Shortness of breathe">
+                                                Shortness of breathe
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" name="hospital" value="Hair problems">
+                                                Hair problems
+                                            </label>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <h5>
+                                        <label>
+                                            Which of the following conditions are currently being treated or have been treated for in the past(please select any one)
+
+                                        </label>
+                                    </h5>
+                                    <div class="dropdown">
+                                        <select id="s1">
+                                            <option value="Eye disorder">Eye disorder</option>
+                                            <option value="Seizures">Seizures</option>
+                                            <option value="Stroke">Stroke</option>
+                                            <option value="Headaches">Headaches</option>
+                                            <option value="Neurological">Neurological</option>
+                                            <option value="Depression">Depression </option>
+                                            <option value="Psychiatric care">  Psychiatric care </option>
+                                            <option value="Diabetes">Diabetes</option>
+                                            <option value="Cancer">Cancer</option>
+
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" value="submit" id="myBtn" onclick="">Submit</button>
+
+                                </div>
+
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!--/.col (right) -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+             immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+        <div id="divColumnSelect" class="modal" style="display:none; padding: 100px 50px 50px 50px;">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="general.html"><span id="popupClose" class="close">&times;</span></a>
+                    <h2 style="text-align:center">Person Details</h2>
+                </div>
+                <div class="modal-body">
+
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+    <script>
+        $(function () {
+        
+            $("#myBtn").on("click", function () {
+                var Ptname = $("#Pname").val();
+                var TDate = $("#Tdate").val();
+                var DoB = $("#dob").val();
+                var ssNo = $("#ssn").val();
+                var PName = $("#ppn").val();
+                var qun1 = $("input[name='optionsRadios']:checked").val();
+                var qun2 = $("input[name='optionsRadios1']:checked").val();
+               // var hospital1 = $("input[name='hospital']:checked").val();
+                var value = $("#s1 option:selected").val();
+                var favorite = [];
+                $.each($("input[name='hospital']:checked"), function () {
+                    favorite.push($(this).val());
+                });
+                //if (Ptname == "") {
+                //    alert("First name must be filled out");
+                //    //$('#Pname').after('<span class="error"> Please enter your ' + inputMessage[0] + '</span>');
+                //} else if (DoB == "") {
+                //    alert("DOB must be filled out");
+                //} else if (ssNo == "") {
+                //    alert("Social Security No");
+                //} else if (PName == "") {
+                //    alert("Physician's name  must be filled out");
+                //} else if (($("#rb1 input[type=radio]:checked").length) == false || ($("#rb2 input[type=radio]:checked").length)==false) {
+                //    alert("You should select yes or no");
+                //} else if (($("#ckb input[type=checkbox]:checked").length) == false) {
+                //    alert("You should check atleast one disease");
+
+                //}
+                //else {
+                    $('#divColumnSelect').find("div[class='modal-body']").html('');
+
+                    var _selectedColumn = $("#divColumnSelect");
+
+                    var divNewTag = "<div  class='row'><div class='popupalignment' data-source-name=\"src1\" style='margin-left:20px'><label>  First Name :</label> " + Ptname + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Todays date: </label>" + TDate + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>DOB:</label> " + DoB + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Social Security No:</label> " + ssNo + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Physician's name:</label> " + PName + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Have you ever been hospitalized? :</label> " + qun1 + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Have you ever been tested for hepatitis A,B or C? :</label> " + qun2 + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Patient Main disease is:</label> " + value + "</div>\n" +
+                        "<div class='popupalignment' data-source-name=\"src1\" ><label>Patient selected diseases are:</label> " + favorite + "</div>\n</div>"
+                    _selectedColumn.find("div[class='modal-body']").append(divNewTag);
+                    _selectedColumn.show();
+                //}
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>
